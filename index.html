@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>zaynith-hub</title>
+  <meta name="description" content="Discover trending viral videos and the latest stories everyone is talking about in the USA.">
+
+  <!-- Histats Tracking -->
+  <script type="text/javascript">
+    var _Hasync = _Hasync || [];
+    _Hasync.push(['Histats.start', '1,5050295,4,9,110,60,00011111']);
+    _Hasync.push(['Histats.fasi', '1']);
+    _Hasync.push(['Histats.track_hits', '']);
+    (function () {
+      var hs = document.createElement('script');
+      hs.type = 'text/javascript';
+      hs.async = true;
+      hs.src = 'https://s10.histats.com/js15_as.js';
+      (document.head || document.body).appendChild(hs);
+    })();
+  </script>
+
+  <style>
+    :root {
+      --red: #e53945;
+      --red-dark: #c92130;
+      --text: #202124;
+      --muted: #70757a;
+      --border: #eeeeee;
+      --bg: #ffffff;
+      --soft: #fff5f5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    #particles {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.45;
+    }
+
+    .site-header,
+    main,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    .site-header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .logo span,
+    .footer-logo span {
+      color: var(--red);
+    }
+
+    .header-tag {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+
+    .nav-bar {
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .nav-inner a {
+      font-size: 13px;
+      font-weight: 700;
+      color: #555;
+      transition: color 0.2s;
+    }
+
+    .nav-inner a:hover,
+    .footer-links a:hover {
+      color: var(--red);
+    }
+
+    .nav-inner .active {
+      color: var(--red);
+    }
+
+    .container {
+      width: min(100% - 32px, 1050px);
+      margin: 0 auto;
+    }
+
+    .page-intro {
+      text-align: center;
+      padding: 38px 0 18px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--red);
+      background: var(--soft);
+      border: 1px solid #ffe1e3;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .page-intro h1 {
+      font-size: clamp(28px, 5vw, 43px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 10px;
+    }
+
+    .page-intro h1 span {
+      color: var(--red);
+    }
+
+    .page-intro p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Native ads */
+    .video-native-ad {
+      width: 100%;
+      min-height: 70px;
+      margin: 22px auto;
+      padding: 10px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #f0f0f0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .ads-label {
+      color: #999;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .featured-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 35px rgba(0, 0, 0, 0.045);
+      margin: 25px auto 35px;
+    }
+
+    .featured-top {
+      padding: 20px 22px 15px;
+    }
+
+    .category {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      padding: 4px 9px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-bottom: 10px;
+    }
+
+    .featured-top h2 {
+      font-size: clamp(21px, 4vw, 30px);
+      line-height: 1.25;
+      letter-spacing: -0.7px;
+      margin-bottom: 8px;
+    }
+
+    .featured-top p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Video thumbnail */
+    .video-link {
+      display: block;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #fff5f5;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .video-thumbnail {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .video-thumbnail.thumbnail-waiting {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .video-link:hover .video-thumbnail {
+      transform: scale(1.025);
+    }
+
+    /* Three-second loading screen */
+    .video-loader {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: #fff5f5;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .video-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-spinner {
+      width: 43px;
+      height: 43px;
+      border: 4px solid #ffdadd;
+      border-top-color: var(--red);
+      border-radius: 50%;
+      animation: thumbnail-spin 0.8s linear infinite;
+    }
+
+    .loader-text {
+      color: var(--red-dark);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes thumbnail-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Center play button */
+    .thumbnail-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.12);
+      opacity: 0;
+      visibility: hidden;
+      transition: background 0.25s, opacity 0.35s;
+    }
+
+    .thumbnail-overlay.ready {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .video-link:hover .thumbnail-overlay {
+      background: rgba(0, 0, 0, 0.23);
+    }
+
+    .play-button {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 4px solid rgba(255, 255, 255, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.28);
+      transition: transform 0.25s, background 0.25s;
+    }
+
+    .video-link:hover .play-button {
+      transform: scale(1.12);
+      background: var(--red-dark);
+    }
+
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-bottom: 13px solid transparent;
+      border-left: 21px solid #fff;
+      margin-left: 5px;
+    }
+
+    .featured-bottom {
+      padding: 20px 22px 23px;
+    }
+
+    .video-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 38px 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .section-heading h2 {
+      font-size: 23px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-heading h2 span {
+      color: var(--red);
+    }
+
+    .section-heading small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 45px;
+    }
+
+    .story-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    .story-image {
+      min-height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fff0f1, #fff8f8);
+      color: var(--red);
+      font-size: 34px;
+    }
+
+    .story-content {
+      padding: 15px;
+    }
+
+    .story-content .story-category {
+      color: var(--red);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+
+    .story-content h3 {
+      font-size: 16px;
+      line-height: 1.4;
+      margin-top: 7px;
+    }
+
+    .story-content p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      background: #fff;
+      padding: 28px 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-logo {
+      color: var(--text);
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 7px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 12px 0;
+    }
+
+    #histats_counter {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin: 10px auto;
+    }
+
+    @media (max-width: 700px) {
+      .header-inner {
+        padding: 12px 15px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .header-tag {
+        font-size: 9px;
+        letter-spacing: 0.8px;
+        text-align: right;
+      }
+
+      .nav-inner {
+        gap: 20px;
+        padding: 10px 15px;
+      }
+
+      .page-intro {
+        padding-top: 28px;
+      }
+
+      .container {
+        width: min(100% - 24px, 1050px);
+      }
+
+      .featured-top,
+      .featured-bottom {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .play-button {
+        width: 60px;
+        height: 60px;
+      }
+
+      .play-icon {
+        border-top-width: 10px;
+        border-bottom-width: 10px;
+        border-left-width: 16px;
+      }
+
+      .stories-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+      }
+
+      .story-card {
+        display: grid;
+        grid-template-columns: 105px 1fr;
+      }
+
+      .story-image {
+        min-height: 100%;
+        font-size: 27px;
+      }
+
+      .story-content {
+        padding: 12px;
+      }
+
+      .story-content h3 {
+        font-size: 14px;
+      }
+
+      .section-heading h2 {
+        font-size: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">zaynith <span>-hub</span>USA</a>
+      <div class="header-tag">What's Trending Now</div>
+    </div>
+
+    <nav class="nav-bar" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="#" class="active">HOME</a>
+        <a href="#featured">TRENDING VIDEOS</a>
+        <a href="#latest">LATEST STORIES</a>
+        <a href="#footer">ABOUT US</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="page-intro">
+      <div class="eyebrow">🔥 The Internet Is Talking</div>
+      <h1>What's <span>Going Viral</span> Today?</h1>
+      <p>
+        Discover trending videos, viral moments, and stories everyone is talking about.
+      </p>
+    </section>
+
+    <!-- NATIVE AD BANNER 1 -->
+    <div class="video-native-ad">
+      <div class="ads-label">ADVERTISEMENT</div>
+      <div>
+        <script
+          data-cfasync="false"
+          async
+          type="text/javascript"
+          src="//oc.trifledloto.com/tWUoxfNvAVctE6m/160134">
+        </script>
+      </div>
+    </div>
+    <!-- END NATIVE AD BANNER 1 -->
+    <div class="ad-slot video-native-ad">
+    <div class="ads-label">ADVERTISEMENT</div>
+
+    <div id="native-ad-script-slot">
+      <script data-cfasync="false" async
+        type="text/javascript"
+        src="//me.tuftierrummage.com/t5vuVutmmhlaSd55y/158254"></script>
+    </div>
+  </div>
+
+    <!-- FEATURED VIDEO -->
+    <section id="featured" class="featured-card">
+
+      <div class="featured-top">
+        <span class="category">Trending Video</span>
+
+        <h2>
+          The Viral Video Everyone Is Talking About Right Now
+        </h2>
+
+        <p>
+          Take a look at the clip that's getting attention online.
+        </p>
+      </div>
+
+
+      <!--
+        SATU-SATUNYA LINK TUJUAN SMART LINK
+        Tombol play di tengah foto menggunakan link ini.
+      -->
+      <a
+        class="video-link"
+        id="featured-video-link"
+        href="https://defianceobserved.com/f15476crh?key=76fb9dce7ef0fc7b5fd6f54f4f1a952b"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Watch the featured video"
+      >
+
+        <img
+          class="video-thumbnail thumbnail-waiting"
+          id="featured-thumbnail"
+          src="https://cdn.imgso.co/zJ4RnVXm7.jpg"
+          alt="Featured trending video thumbnail"
+          loading="eager"
+          fetchpriority="high"
+        >
+
+        <div
+          class="video-loader"
+          id="thumbnail-loader"
+        >
+          <div class="loader-spinner"></div>
+          <div class="loader-text">
+            Loading featured video...
+          </div>
+        </div>
+
+        <!-- ONLY ONE PLAY BUTTON -->
+        <span
+          class="thumbnail-overlay"
+          id="thumbnail-overlay"
+          aria-hidden="true"
+        >
+          <span class="play-button">
+            <span class="play-icon"></span>
+          </span>
+        </span>
+
+      </a>
+
+
+      <div class="featured-bottom">
+
+        <div class="video-meta">
+          <span>▶️ Featured Clip</span>
+          <span>•</span>
+          <span>Trending Now</span>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- END FEATURED VIDEO -->
+
+
+    <!-- NATIVE AD BANNER 2 -->
+    <div
+      class="video-native-ad"
+      style="margin:19px 12px 0;"
+    >
+      <div class="ads-label">ADVERTISEMENT</div>
+
+      <div id="native-ad-script-slot">
+        <script
+          data-cfasync="false"
+          async
+          type="text/javascript"
+          src="//me.tuftierrummage.com/t4y2HrXodbadiql2/148251">
+        </script>
+      </div>
+
+    </div>
+    <!-- END NATIVE AD BANNER 2 -->
+
+    <section id="latest">
+
+      <div class="section-heading">
+        <h2>
+          Latest <span>Buzz</span>
+        </h2>
+
+        <small>
+          Explore what's trending
+        </small>
+      </div>
+
+
+      <div class="stories-grid">
+
+        <article class="story-card">
+          <div
+            class="story-image"
+            aria-hidden="true"
+          >
+            🔥
+          </div>
+
+          <div class="story-content">
+            <div class="story-category">
+              Viral Trends
+            </div>
+
+            <h3>
+              What Everyone Is Watching This Week
+            </h3>
+
+            <p>
+              Trending topics and popular online moments.
+            </p>
+          </div>
+        </article>
+
+
+        <article class="story-card">
+
+          <div
+            class="story-image"
+            aria-hidden="true"
+          >
+            ⚡
+          </div>
+
+          <div class="story-content">
+
+            <div class="story-category">
+              Popular Now
+            </div>
+
+            <h3>
+              The Stories Taking Over Social Media
+            </h3>
+
+            <p>
+              A look at the latest buzz from around the web.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="story-card">
+
+          <div
+            class="story-image"
+            aria-hidden="true"
+          >
+            📈
+          </div>
+
+          <div class="story-content">
+
+            <div class="story-category">
+              Trending Today
+            </div>
+
+            <h3>
+              Discover What's Getting Attention Online
+            </h3>
+
+            <p>
+              Explore more stories making waves online.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Histats Counter -->
+  <div id="histats_counter"></div>
+
+  <noscript>
+    <a
+      href="https://www.histats.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="https://sstatic1.histats.com/0.gif?5044824&101"
+        alt="Histats visitor counter"
+        style="border:0;"
+      >
+    </a>
+  </noscript>
+
+
+  <footer id="footer">
+
+    <div class="footer-logo">
+      zaynith-hub<span>hub</span> USA
+    </div>
+
+    <p>
+      Your daily destination for trending videos and viral stories.
+    </p>
+
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="#featured">Trending Videos</a>
+      <a href="#latest">Latest Stories</a>
+    </div>
+
+    <p>
+      © <span id="current-year"></span>
+      zaynith-hub. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <script>
+
+    // Automatically update copyright year.
+    document.getElementById('current-year').textContent =
+      new Date().getFullYear();
+
+
+    // Show thumbnail and center play button after 3 seconds.
+    (function () {
+
+      const thumbnail =
+        document.getElementById('featured-thumbnail');
+
+      const loader =
+        document.getElementById('thumbnail-loader');
+
+      const overlay =
+        document.getElementById('thumbnail-overlay');
+
+      if (!thumbnail || !loader || !overlay) return;
+
+
+      function showThumbnail() {
+
+        thumbnail.classList.remove(
+          'thumbnail-waiting'
+        );
+
+        loader.classList.add(
+          'hidden'
+        );
+
+        overlay.classList.add(
+          'ready'
+        );
+
+      }
+
+
+      window.setTimeout(
+        showThumbnail,
+        3000
+      );
+
+    })();
+
+
+    // Floating red particle animation.
+    (function () {
+
+      const canvas =
+        document.getElementById('particles');
+
+      const ctx =
+        canvas.getContext('2d');
+
+      if (!ctx) return;
+
+
+      let width = 0;
+      let height = 0;
+      let particles = [];
+      let animationFrame;
+
+
+      const reducedMotion =
+        window.matchMedia(
+          '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+
+      function resizeCanvas() {
+
+        const dpr =
+          Math.min(
+            window.devicePixelRatio || 1,
+            2
+          );
+
+        width =
+          window.innerWidth;
+
+        height =
+          window.innerHeight;
+
+
+        canvas.width =
+          Math.floor(width * dpr);
+
+        canvas.height =
+          Math.floor(height * dpr);
+
+
+        canvas.style.width =
+          width + 'px';
+
+        canvas.style.height =
+          height + 'px';
+
+
+        ctx.setTransform(
+          dpr,
+          0,
+          0,
+          dpr,
+          0,
+          0
+        );
+
+
+        const count =
+          Math.min(
+            55,
+            Math.max(
+              18,
+              Math.floor(
+                (width * height) / 26000
+              )
+            )
+          );
+
+
+        particles =
+          Array.from(
+            { length: count },
+            () => ({
+
+              x:
+                Math.random() * width,
+
+              y:
+                Math.random() * height,
+
+              radius:
+                Math.random() * 2 + 0.7,
+
+              speedX:
+                (Math.random() - 0.5) * 0.35,
+
+              speedY:
+                Math.random() * -0.35 - 0.08,
+
+              alpha:
+                Math.random() * 0.35 + 0.12
+
+            })
+          );
+
+      }
+
+
+      function drawParticles() {
+
+        ctx.clearRect(
+          0,
+          0,
+          width,
+          height
+        );
+
+
+        particles.forEach(
+          (particle) => {
+
+            ctx.beginPath();
+
+
+            ctx.arc(
+              particle.x,
+              particle.y,
+              particle.radius,
+              0,
+              Math.PI * 2
+            );
+
+
+            ctx.fillStyle =
+              'rgba(229, 57, 69,' +
+              particle.alpha +
+              ')';
+
+
+            ctx.fill();
+
+
+            if (!reducedMotion) {
+
+              particle.x +=
+                particle.speedX;
+
+              particle.y +=
+                particle.speedY;
+
+
+              if (particle.y < -5) {
+
+                particle.y =
+                  height + 5;
+
+                particle.x =
+                  Math.random() * width;
+
+              }
+
+
+              if (particle.x < -5) {
+                particle.x =
+                  width + 5;
+              }
+
+
+              if (particle.x > width + 5) {
+                particle.x =
+                  -5;
+              }
+
+            }
+
+          }
+        );
+
+
+        if (!reducedMotion) {
+
+          animationFrame =
+            requestAnimationFrame(
+              drawParticles
+            );
+
+        }
+
+      }
+
+
+      resizeCanvas();
+      drawParticles();
+
+
+      window.addEventListener(
+        'resize',
+        () => {
+
+          cancelAnimationFrame(
+            animationFrame
+          );
+
+          resizeCanvas();
+          drawParticles();
+
+        }
+      );
+
+    })();
+
+  </script>
+
+</body>
+</html>
